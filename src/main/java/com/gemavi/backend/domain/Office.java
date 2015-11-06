@@ -1,12 +1,20 @@
 package com.gemavi.backend.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Office {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String id;
 
 	private String name;
 
-	private long lat, lng;
+	private double lat, lng;
 
 	private int count;
 
@@ -17,6 +25,8 @@ public class Office {
 
 	public int dec() {
 		count -= 1;
+		if (count < 0)
+			count = 0;
 		return count;
 	}
 
@@ -36,19 +46,19 @@ public class Office {
 		this.name = name;
 	}
 
-	public long getLat() {
+	public double getLat() {
 		return lat;
 	}
 
-	public void setLat(long lat) {
+	public void setLat(double lat) {
 		this.lat = lat;
 	}
 
-	public long getLng() {
+	public double getLng() {
 		return lng;
 	}
 
-	public void setLng(long lng) {
+	public void setLng(double lng) {
 		this.lng = lng;
 	}
 
