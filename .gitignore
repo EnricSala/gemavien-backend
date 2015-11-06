@@ -1,0 +1,13 @@
+
+.classpath
+.mvn/
+.settings/
+.project
+
+target/
+bin/
+
+*.jar
+*.temp
+
+
