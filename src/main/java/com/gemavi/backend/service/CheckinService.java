@@ -11,20 +11,20 @@ import com.gemavi.backend.repository.OfficeRepository;
 public class CheckinService {
 
 	@Autowired
-	private OfficeRepository offices;
+	private OfficeRepository officeService;
 
 	@Transactional
 	public Office addVisitor(String officeId) {
-		Office office = offices.findOne(officeId);
+		Office office = officeService.findOne(officeId);
 		office.inc();
-		return offices.save(office);
+		return officeService.save(office);
 	}
 
 	@Transactional
 	public Office removeVisitor(String officeId) {
-		Office office = offices.findOne(officeId);
+		Office office = officeService.findOne(officeId);
 		office.dec();
-		return offices.save(office);
+		return officeService.save(office);
 	}
 
 }
