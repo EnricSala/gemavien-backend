@@ -6,7 +6,7 @@ public class Company {
 
 	private String id;
 
-	private List<Office> offices;
+	private List<String> officeIds;
 
 	public String getId() {
 		return id;
@@ -16,12 +16,17 @@ public class Company {
 		this.id = id;
 	}
 
-	public List<Office> getOffices() {
-		return offices;
+	public List<String> getOfficeIds() {
+		return officeIds;
 	}
 
-	public void setOffices(List<Office> offices) {
-		this.offices = offices;
+	public void setOfficeIds(List<String> officeIds) {
+		this.officeIds = officeIds;
+	}
+
+	@Override
+	public String toString() {
+		return "Company [id=" + id + ", officeIds=" + officeIds + "]";
 	}
 
 }
