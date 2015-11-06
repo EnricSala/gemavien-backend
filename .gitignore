@@ -3,11 +3,11 @@
 .mvn/
 .settings/
 .project
+.apt_generated/
+.factorypath
 
 target/
 bin/
 
 *.jar
 *.temp
-
-
