@@ -16,15 +16,23 @@ public class CheckinService {
 	@Transactional
 	public Office addVisitor(String officeId) {
 		Office office = officeService.findOne(officeId);
-		office.inc();
-		return officeService.save(office);
+		if (office != null) {
+			office.inc();
+			return officeService.save(office);
+		} else {
+			return null;
+		}
 	}
 
 	@Transactional
 	public Office removeVisitor(String officeId) {
 		Office office = officeService.findOne(officeId);
-		office.dec();
-		return officeService.save(office);
+		if (office != null) {
+			office.dec();
+			return officeService.save(office);
+		} else {
+			return null;
+		}
 	}
 
 }
