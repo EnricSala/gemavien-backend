@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Office {
+public class Office implements Comparable<Office> {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -73,6 +73,11 @@ public class Office {
 	@Override
 	public String toString() {
 		return "Office [id=" + id + ", name=" + name + ", lat=" + lat + ", lng=" + lng + ", count=" + count + "]";
+	}
+
+	@Override
+	public int compareTo(Office off) {
+		return this.count - off.count;
 	}
 
 }
