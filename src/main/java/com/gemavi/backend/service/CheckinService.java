@@ -11,14 +11,14 @@ import com.gemavi.backend.repository.OfficeRepository;
 public class CheckinService {
 
 	@Autowired
-	private OfficeRepository officeService;
+	private OfficeRepository officeRepository;
 
 	@Transactional
 	public Office addVisitor(String officeId) {
-		Office office = officeService.findOne(officeId);
+		Office office = officeRepository.findOne(officeId);
 		if (office != null) {
 			office.inc();
-			return officeService.save(office);
+			return officeRepository.save(office);
 		} else {
 			return null;
 		}
@@ -26,10 +26,10 @@ public class CheckinService {
 
 	@Transactional
 	public Office removeVisitor(String officeId) {
-		Office office = officeService.findOne(officeId);
+		Office office = officeRepository.findOne(officeId);
 		if (office != null) {
 			office.dec();
-			return officeService.save(office);
+			return officeRepository.save(office);
 		} else {
 			return null;
 		}
