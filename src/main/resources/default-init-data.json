@@ -3,43 +3,43 @@
 		"name": "LaCaixa",
 		"offices": [{
 			"name": "office1",
-			"count": 0,
+			"count": 11,
 			"lat": 41.382895,
 			"lng": 2.1633243
 		},
 		{
 			"name": "office2",
-			"count": 0,
+			"count": 3,
 			"lat": 41.3856534,
 			"lng": 2.1646205
 		},
 		{
 			"name": "office3",
-			"count": 0,
+			"count": 9,
 			"lat": 41.39076,
 			"lng": 2.1745088
 		},
 		{
 			"name": "office4",
-			"count": 0,
+			"count": 14,
 			"lat": 41.3907916,
 			"lng": 2.1745088
 		},
 		{
 			"name": "office5",
-			"count": 0,
+			"count": 7,
 			"lat": 41.3882868,
 			"lng": 2.1683855
 		},
 		{
 			"name": "office6",
-			"count": 0,
+			"count": 6,
 			"lat": 41.3848632,
 			"lng": 2.1554461
 		},
 		{
 			"name": "office7",
-			"count": 0,
+			"count": 4,
 			"lat": 41.3856651,
 			"lng": 2.1580544
 		}]
