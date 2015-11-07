@@ -1,5 +1,8 @@
 package com.gemavi.backend.controller;
 
+import java.util.Collections;
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +26,13 @@ public class CompanyController {
 	@RequestMapping(value = "/{companyId}", method = RequestMethod.GET)
 	public Company getCompany(@PathVariable String companyId) {
 		LOG.info("requested company by id {}", companyId);
-		return companyService.getCompany(companyId).orElse(null);
+		Optional<Company> company = companyService.getCompany(companyId);
+		if (company.isPresent()) {
+			Company value = company.get();
+			Collections.sort(value.getOffices());
+			return value;
+		}
+		return null;
 	}
 
 }
